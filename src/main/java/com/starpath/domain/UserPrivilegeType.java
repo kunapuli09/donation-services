@@ -1,0 +1,26 @@
+package com.starpath.domain;
+
+/**
+* @version $Revision: 1.0 $ $Date: 2008/02/02 $
+* @since Hibernate 3.2.1 / Spring 2.0.6 / Maven 2.0.4
+* @author Krishna M. Kunapuli
+* <p>
+*   Copyright ©2007-2008 by StarpathIT Inc., all rights reserved.
+* <br>
+*/
+
+public enum UserPrivilegeType {
+	ROLE_MEMBER("ROLE_MEMBER"),
+	ROLE_TRUSTEE("ROLE_TRUSTEE"),
+	ROLE_VOLUNTEER("ROLE_VOLUNTEER");
+
+    private final String debugName;
+
+	private UserPrivilegeType(String debugName) {
+		this.debugName = debugName;
+	}
+
+	public String toString() {
+	    return debugName;
+	}
+}

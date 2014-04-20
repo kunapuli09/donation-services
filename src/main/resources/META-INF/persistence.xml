@@ -1,0 +1,25 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<persistence-unit name="userPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence
+		</provider>
+		<class>com.starpath.domain.User</class>
+		<class>com.starpath.domain.Pledge</class>
+		<class>com.starpath.domain.PaymentDetail
+		</class>
+		<class>com.starpath.domain.UserPrivilege
+		</class>
+		<class>com.starpath.domain.UserFamilyMember
+		</class>
+		<class>com.starpath.domain.Address</class>
+		<exclude-unlisted-classes />
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<!--
+				<property name="hibernate.archive.autodetection" value="class, hbm"
+				/> <property name="hibernate.hbm2ddl.auto" value="create" />-->
+			
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,2 @@
+<h2> System was not able to send registration Email to your email address. Email Address appears to be invalid. Please try register again with a valid Email.</h2>
+ Please Click <a href="login.htm">here</a> to goto the registration page. 

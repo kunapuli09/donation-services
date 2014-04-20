@@ -1,0 +1,373 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	PRINT STYLES - ONLY APPLIED WHEN PRINTING THE PAGES
+	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+	margin:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	line-height:140%;
+}
+
+hr{
+	height: 1px;
+	border:1px solid #999999;
+	margin:10px 0;
+	_margin:5px 0;
+	padding:0;
+	}
+
+p.no-padding-no-margin {
+	padding:0;
+	margin:0;
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	DIVs THAT ARE NOT PRINTED
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#nav-main {
+	display:none;
+	}
+
+.none 
+{
+    display:none;
+}
+	
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	HEADINGS 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+	
+h1, h2, h3, h4, h5, h6 {
+	font-size:20px;
+	font-family:Tahoma, Arial, Helvetica, sans-serif;
+	padding:4px 0;
+}
+
+h2 {
+	font-size:16px;
+}
+
+h3 {
+	font-size:13px;
+}
+
+h3.small {
+	font-size:11px;
+}
+
+h4 {
+	font-size:12px;
+}
+
+h5 {
+	font-size:12px;
+}
+
+h6 {
+	font-size:12px;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	TOP INFORMATION
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#top-information {
+	font-size:9px;
+	width:99%;
+	height:55px;
+	position:relative;
+	}
+	
+#logo {
+	font-size:28px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-variant:small-caps;
+	padding:4px 0 10px 0;
+	}
+
+#logo a {
+	color:#4A6BB3;
+	text-decoration:none;
+	}
+
+#top-information-home {
+	position:absolute;
+	top:13px;
+	right:5px;
+	width:50%;
+	text-align:right;
+	}
+	
+#top-information-phone {
+	position:absolute;
+	top:0;
+	right:5px;
+	width:50%;
+	text-align:right;
+	}
+
+#top-information-link {
+	position:absolute;
+	top:26px;
+	right:5px;
+	width:50%;
+	text-align:right;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	POSTER PHOTO
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#poster-photo-container {
+	position:relative;
+	border:2px solid #CCC;
+	padding:10px;
+	text-align:center;
+	}
+	
+.poster-photo-image {
+	}
+
+#feature-area-home {
+	font-size:22px;
+	font-weight:bold;
+	line-height:160%;
+	}
+
+#feature-area-home a:link,
+#feature-area-home a:visited {
+	}
+	
+#feature-area-home a:hover {
+	}
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	pagetitle
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#pagetitle {
+	font-size:10px;
+	padding:6px;
+	border:1px solid #000;
+	margin:10px 0;
+	}
+
+#pagetitle a:link,
+#pagetitle a:visited {
+	}
+
+#pagetitle a:hover{
+	}
+	
+	
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	CONTENT CONTAINER - THREE COLUMN
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#content-container-three-column {
+	}
+
+#content-main-three-column {
+	width:460px;
+	float:left;
+	margin-left:25px;
+	padding:0 0 10px 0;
+	}
+
+#content-side2-three-column {
+	clear:both;
+	border-top:1px solid #000;
+	padding:4px 0 0 0;
+	margin:20px 0 0 0;
+	}
+
+#content-side1-three-column {
+	float:left;
+	width:150px;
+	}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	HOME PAGE - THREE COLUMN SECTION
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#three-column-container {
+	border:1px solid #CCC;
+	padding:3%;
+	margin:15px 0;
+	}
+
+#three-column-side1 {
+	float:left;
+	width:28%;
+	padding-right:3%;
+	border-right:1px dashed #CCC;
+	}
+
+#three-column-side2 {
+	float:right;
+	width:26%;
+	}
+
+#three-column-middle {
+	width:29%;
+	margin:0px 29% 0px 33%;
+	padding-right:3%;
+	border-right:1px dashed #CCC;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	LISTS
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+ul {
+	}
+
+li {
+}
+
+ul.list-of-links {
+	border-bottom:1px dotted #000;
+}
+
+#content-side1-three-column ul.list-of-links,
+#content-side2-three-column ul.list-of-links,
+#content-side-two-column ul.list-of-links {
+	margin:0 0 30px 0;
+	padding:0;
+}
+
+#content-side1-three-column ul.list-of-links li,
+#content-side2-three-column ul.list-of-links li,
+#content-side-two-column ul.list-of-links li {
+	padding:0;
+	padding:2px 0 2px 2px;
+}
+
+#content-side1-three-column ul.list-of-links li.current,
+#content-side2-three-column ul.list-of-links li.current{
+	font-weight:bold;
+	border:2px solid #000;
+}
+
+ul.list-of-links li{
+	border-top:1px dotted #B2B2B2;
+}
+
+ul.no-lines,
+ul.no-lines li {
+	border:none;
+	}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	IMAGES & PHOTOS
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+img {
+	border:none;
+	}
+
+.photo-border {
+	border:1px solid #cecece;
+	padding:4px;
+	margin-bottom:5px;
+	display:block;
+}
+
+.photo-float-left {
+	float:left;
+	margin-right:10px;
+	}
+
+.image-border-none {
+	border:none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	FOOTER
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#footer {
+	color:#999999;
+	font-size:9px;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	padding:8px 0;
+	margin:10px 0;
+}
+
+#footer div {
+	display:none;
+}
+
+#footer a:link,
+#footer a:visited {
+}
+
+#footer a:hover {
+}
+
+#footer a:active {
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+	FOOTER-SUB
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#footer-sub {
+	color:#999999;
+	font-size:9px;
+	}
+
+#footer-sub ul {
+	margin:0;
+	padding:0;
+	}
+	
+#footer-sub li {
+	display:inline;
+	list-style:none;
+	padding:0 1em 0 0;
+	background:none;
+	}
+
+#footer-sub a:link,
+#footer-sub a:visited {
+}
+
+#footer-sub a:hover {
+}

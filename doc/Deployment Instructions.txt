@@ -1,0 +1,48 @@
+Connect to putty through SSH, port number 22
+Hostname: starpathit.com
+Username: root
+Password: kk@starpath
+pwd is to show the directory where you are
+ls -l is the to list all files and directories in the present directory.
+Go to /home/krishna/tomcat
+
+1) get the process id  ->    ps -ef | grep tomcat
+
+2) kill it by using following command  kill -9 <<processid>>
+
+3)Go to - cd /home/krishna/tomcat/webapps
+
+4) To remove the existing war -> rm -rf Temple.war
+
+5) Get the latest code from subversion by updating it and make these changes
+
+	db.properties need a changed.
+	change the userid/password to prodroot/prodroot
+	make sure persistance.xml is commentedout.
+	build starpath-web locally.
+
+6)Go to webmin -> 
+	https://starpathit.com:10000
+        login as root/kk@starpath
+        click on others icon
+        use file upload/download
+        upload local build war to /home/krishna/tomcat/webapps
+
+
+7) Go to cd /home/krishna/tomcat/bin
+	nohup ./startup.sh > tomcat.out 
+	verify by going into https://starpathit.com/Temple/
+
+remove jsp-api-2.0.jar
+
+8) TO set the roles for an user, 
+
+from SSH - open mysql - insert or update the roles (ROLE_MEMBER, ROLE_VOLUNTEER, ROLE_TRUSTEE)
+ (OR)
+From Webmin - Go to servers/starpath/Execute SQL
+Note: Table names should be captel letters
+
+
+Apache webserver- edit config files option -copy that whole content and paste it to notepad  search for starpath-web
+ change starpath-web to Temple
+stop apache and start apache

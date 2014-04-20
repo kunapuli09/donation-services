@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+               http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+				<value>errors</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="loginController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+	<bean id="forgotPasswordDisplayController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+	<bean id="errorController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+	<bean id="defaultController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+	<bean id="templeRevenueController" class="com.starpath.mvc.RevenueController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="templeTaxEmailController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+	<bean id="pledgeController" class="com.starpath.mvc.PledgeController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="userDetailController" class="com.starpath.mvc.UserDetailController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="addPledgeController" class="com.starpath.mvc.AddPledgeController">
+		<property name="pages">
+			<list>
+				<value>paymentPledgeFormForUser</value>
+				<value>paymentConfirmationForUser</value>
+				<value>redirect:home.htm</value>
+			</list>
+		</property>
+		<property name="validator">
+			<bean class="com.starpath.util.UserValidator" />
+		</property>
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="paymentDetailsController" class="com.starpath.mvc.PaymentDetailsController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="editPaymentController" class="com.starpath.mvc.EditPaymentController">
+		<property name="formView" value="editPayment" />
+		<property name="successView" value="searchPaymentDetail" />
+		<property name="cancelView" value="home" />
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="homePageController" class="com.starpath.mvc.HomePageController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="searchUserController" class="com.starpath.mvc.SearchUserController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="taxEmailController" class="com.starpath.mvc.TaxEmailController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="searchPledgeController" class="com.starpath.mvc.SearchPledgeController">
+		<property name="pledgeService" ref="pledgeService" />		
+	</bean>
+	<bean id="forgotPasswordController" class="com.starpath.mvc.ForgotPasswordController">
+		<property name="pledgeService" ref="pledgeService" />
+		<property name="successView" value="forgotPasswordSuccess" />
+		<property name="cancelView" value="login" />
+	</bean>
+	<bean id="searchPaymentDetailController" class="com.starpath.mvc.SearchPaymentDetailController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="addUserController" class="com.starpath.mvc.AddUserController">
+		<property name="formView" value="addUser" />
+		<property name="successView" value="users" />
+		<property name="pledgeService" ref="pledgeService" />
+		<property name="validator">
+			<bean class="com.starpath.util.EditUserValidator" />
+		</property>
+	</bean>
+	<bean id="editUserController" class="com.starpath.mvc.EditUserController">
+		<property name="formView" value="editUser" />
+		<property name="successView" value="searchUsers" />
+		<property name="cancelView" value="home" />
+		<property name="pledgeService" ref="pledgeService" />
+		<property name="validator">
+			<bean class="com.starpath.util.EditUserValidator" />
+		</property>
+	</bean>
+	<bean id="editPledgeController" class="com.starpath.mvc.EditPledgeController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="paymentController" class="com.starpath.mvc.PaymentController">
+		<property name="pages">
+			<list>
+				<value>paymentUserForm</value>
+				<value>paymentPledgeForm</value>
+				<value>paymentConfirmation</value>
+				<value>redirect:login.htm</value>
+			</list>
+		</property>
+		<property name="validator">
+			<bean class="com.starpath.util.UserValidator" />
+		</property>
+
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+
+	<bean id="userFamilyRegistrationController" class="com.starpath.mvc.UserFamilyRegistrationController">
+		<property name="pages">
+			<list>
+				<value>registerUserForm</value>
+				<value>registerUserFamilyMemberForm</value>
+				<value>familyMemberConfirmation</value>
+				<value>redirect:login.htm</value>
+			</list>
+		</property>
+		<property name="validator">
+			<bean class="com.starpath.util.UserFamilyMemberValidator" />
+        </property>
+	<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	
+	<bean id="searchFamilyMembersController" class="com.starpath.mvc.SearchFamilyMembersController">
+		<property name="pledgeService" ref="pledgeService" />
+	</bean>
+	<bean id="editUserFamilyMemberController" class="com.starpath.mvc.EditUserFamilyMemberController">
+		<property name="formView" value="editUserFamilyMember" />
+		<property name="successView" value="searchFamilyMembers" />
+		<property name="cancelView" value="home" />
+		<property name="pledgeService" ref="pledgeService" />
+		<property name="validator">
+			<bean class="com.starpath.util.EditUserFamilyMemberValidator" />
+		</property>
+	</bean>
+
+	<bean id="simpleHandler"
+		class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+	<bean id="throwawayHandler"
+		class="org.springframework.web.servlet.mvc.throwaway.ThrowawayControllerHandlerAdapter" />
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/home.htm">defaultController</prop>
+				<prop key="/login.htm">loginController</prop>
+				<prop key="/editUser.htm">editUserController</prop>
+				<prop key="/addPledge.htm">addPledgeController</prop>
+				<prop key="/editPledge.htm">editPledgeController</prop>
+				<prop key="/users.htm">homePageController</prop>
+				<prop key="/addUser.htm">addUserController</prop>
+				<prop key="/registerUser.htm">paymentController</prop>
+				<prop key="/registerUserMembers.htm">userFamilyRegistrationController
+				</prop>
+				<prop key="/searchUsers.htm">searchUserController</prop>
+				<prop key="/searchAction.htm">
+					searchUserController
+				</prop>
+				<prop key="/searchMembersAction.htm">
+					searchFamilyMembersController
+				</prop>
+				<prop key="/searchFamilyMembers.htm">
+					searchFamilyMembersController
+				</prop>
+				<prop key="/editUserFamilyMember.htm">editUserFamilyMemberController
+				</prop>
+				<prop key="/userDetail.htm">
+					userDetailController
+				</prop>
+				<prop key="/searchPledges.htm">
+					searchPledgeController
+				</prop>
+				<prop key="/searchPledgeAction.htm">
+					searchPledgeController
+				</prop>
+				<prop key="/searchPaymentDetail.htm">
+					searchPaymentDetailController
+				</prop>
+				<prop key="/searchPaymentDetailAction.htm">
+					searchPaymentDetailController
+				</prop>
+				<prop key="/pledges.htm">pledgeController</prop>
+				<prop key="/addPledge.htm">addPledgeController</prop>
+				<prop key="/paymentDetails.htm">
+					paymentDetailsController
+				</prop>
+				<prop key="/taxEmail.htm">taxEmailController</prop>
+
+				<prop key="/error.htm">errorController</prop>
+				<prop key="/templeRevenue.htm">
+					templeRevenueController
+				</prop>
+				<prop key="/editPayment.htm">
+					editPaymentController
+				</prop>
+				<prop key="/forgotPasswordForm.htm">
+					forgotPasswordDisplayController
+				</prop>
+				<prop key="/forgotPassword.htm">
+					forgotPasswordController
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- FOR TILES -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/user-tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles.TilesJstlView" />
+	</bean>
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error</prop>
+				<prop key="com.starpath.domain.UserAlreadyExistsException">userExists</prop>
+				<prop key="com.starpath.domain.InvalidEmailException">emailError</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="validatorFactory"
+		class="org.springmodules.validation.commons.DefaultValidatorFactory">
+		<property name="validationConfigLocations">
+			<list>
+				<value>WEB-INF/validator-rules.xml
+				</value>
+				<value>WEB-INF/validation.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="beanValidator"
+		class="org.springmodules.validation.commons.DefaultBeanValidator">
+		<property name="validatorFactory" ref="validatorFactory" />
+	</bean>
+
+
+</beans>

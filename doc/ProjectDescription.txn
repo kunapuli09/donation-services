@@ -1,0 +1,38 @@
+This is a Donation Management & Fund Raiser Software for non-profit organizations. 
+The URL to access Donation Management Sample is http://starpathit.com/Temple/
+username=trustee@starpath.com
+password=trustee@1
+
+These are the following high level system functions.
+
+
+1)Temple Members/Donors could register make a pledge/promise and make a one time payment online through this system.
+2)Temple Members/Donors could also make a TERM Pledge(Ex:$10 per month for 3 years) online through this system.
+3)Temple Members/Donors could edit their contact address or profile online through this system.
+4)Trustees or temple assigned authorities could also do the above three things on behalf of the member/donor.
+5)Trustees or temple assigned authorities could record/edit the payment when it is received(actual revenue) from the member/donor. 
+6)Trustees could see all the members/donors donated to the temple or search for a user or a user's pledge
+7)Trustees could disable a pledge if it is in-active for long time and members are not paying
+8)Trustees could see the temple total revenue(only received&deposited checks) or for given date range
+9)Trustees could verify the actual checks recived, compare with system records and send an yearly tax email.
+10)Trustees could edit their profiles or any member's profile
+11)Members or donors only have limited access to the system and trustees have full access.
+
+The biggest assumption for this system is that most of the donations received are by check in person handed over to someone at the temple. 
+
+Possible enhancements
+1) Accepting credit card payments
+2) Giving members the access to see their pledges and payments
+3) Automatic recurring deduction from their credit cards after the user approves it
+4) Fixing other bugs
+
+The userid and password I gave you belong to trustee role. Trustee
+role has access to everything in the application. 
+The important things to check in the site are
+1) Adding a new Pledge. There are several types of pledges.
+2) Revenue between dates(try a start date in mm/dd/yyyy january till today)
+3) Adding Editing donor information.
+4) Payments are calculated based on the pledge the user makes.
+5) Search payments, pledges or user information by last name
+6) Tax Email
+ 

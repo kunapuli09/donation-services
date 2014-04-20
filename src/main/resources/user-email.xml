@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="starpathit.com" />
+	</bean>
+	<bean id="mailMessage"
+		class="org.springframework.mail.SimpleMailMessage">
+		<property name="from">
+			<value>
+				<![CDATA[HinduTempleOfColorado <administrator@starpathit.com>]]>
+			</value>
+		</property>
+		<property name="subject" value="Thank You from Hindu Temple Of Colorado!" />
+		<property name="text">
+			<value>
+				<![CDATA[
+		Dear  %USER% , Thank you for promising a contribution to the temple.
+		Thank You
+		Technical Support,
+		Hindu Temple Of Colorado
+        ]]>
+			</value>
+		</property>
+	</bean>
+	<bean id="forgotPasswordMessage"
+		class="org.springframework.mail.SimpleMailMessage">
+		<property name="from">
+			<value>
+				<![CDATA[HinduTempleOfColorado <administrator@starpathit.com>]]>
+			</value>
+		</property>
+		<property name="subject" value="Your Password from Hindu Temple Of Colorado!" />
+		<property name="text">
+			<value>
+				<![CDATA[
+		Dear  %USER% , Here is your Password %PASSWORD%
+		Thank You
+		Technical Support,
+		Hindu Temple Of Colorado
+        ]]>
+			</value>
+		</property>
+	</bean>
+	<bean id="registrationMessage"
+		class="org.springframework.mail.SimpleMailMessage">
+		<property name="from">
+			<value>
+				<![CDATA[HinduTempleOfColorado <administrator@starpathit.com>]]>
+			</value>
+		</property>
+		<property name="subject" value="Thank You from Hindu Temple Of Colorado!" />
+		<property name="text">
+			<value>
+				<![CDATA[
+		Dear  %USER% , Thank you for registering with Hindu Temple Of Colorado.
+		Please user %EMAIL% and %PASSWORD% to login to Hindu Temple Of Colorado website.
+		Thank You
+		Technical Support,
+		Hindu Temple Of Colorado
+        ]]>
+			</value>
+		</property>
+	</bean>
+</beans>

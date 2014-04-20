@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+             http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                       http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!--  ================== -->
+	<!--  FILTER CHAIN PROXY -->
+	<!--  ================== -->	
+	<bean id="filterChainProxy"
+		class="org.acegisecurity.util.FilterChainProxy">
+		<property name="filterInvocationDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/**=concurrentSessionFilter, httpSessionIntegrationFilter,logoutFilter, authenticationProcessingFilter,rememberMeProcessingFilter, exceptionTranslationFilter,filterSecurityInterceptor
+			</value>
+		</property>
+	</bean>
+
+	<!--  ============== -->
+	<!--  AUTHENTICATION -->
+	<!--  ============== -->
+	<bean id="authenticationProcessingFilter"
+		class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilter">
+		<property name="authenticationManager"
+			ref="authenticationManager" />
+		<property name="authenticationFailureUrl"
+			value="/login.htm?login_error=1" />
+		<property name="defaultTargetUrl" value="/home.htm" />
+		<property name="filterProcessesUrl"
+			value="/j_acegi_security_check" />
+		<property name="rememberMeServices" ref="rememberMeServices" />
+	</bean>
+	<!-- 
+		The ProviderManager bean
+	-->
+	<bean id="authenticationManager"
+		class="org.acegisecurity.providers.ProviderManager">
+		<property name="providers">
+			<list>
+				<ref bean="daoAuthenticationProvider" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 
+		The DaoAuthenticationProvider
+	-->
+	<bean id="daoAuthenticationProvider"
+		class="org.acegisecurity.providers.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="userDetailsService" />
+		<!--<property name="passwordEncoder">
+			<bean
+				class="org.acegisecurity.providers.encoding.Md5PasswordEncoder" />
+		</property>
+		<property name="saltSource">
+			<bean
+				class="org.acegisecurity.providers.dao.salt.SystemWideSaltSource">
+				<property name="systemWideSalt" value="ABC123XYZ789"></property>
+			</bean>
+		</property>
+
+	--></bean>
+
+	<bean id="userDetailsService"
+		class="org.acegisecurity.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="usersByUsernameQuery">
+			<value>
+				SELECT email as username, password, account_enabled FROM USER
+				WHERE email=?
+			</value>
+		</property>
+		<property name="authoritiesByUsernameQuery">
+			<value>
+				SELECT email as username, privilege FROM USER_PRIVILEGE
+				up, USER u WHERE up.user_id = u.id AND u.email=?
+			</value>
+		</property>
+	</bean>
+
+	<!-- 
+		Form-based authentication entry point
+	-->
+
+	<bean id="authenticationEntryPoint"
+		class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+		<property name="loginFormUrl" value="/login.htm" />
+		<property name="forceHttps" value="false" />
+	</bean>
+
+
+
+	<!--  ============= -->
+	<!--  AUTHORIZATION -->
+	<!--  ============= -->
+	<!-- 
+		Access decision manager, originally shown on page 273, then further
+		configured on page 275.
+	-->
+	<bean id="accessDecisionManager"
+		class="org.acegisecurity.vote.UnanimousBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.acegisecurity.vote.RoleVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<!--  ===================== -->
+	<!--  EXCEPTION TRANSLATION -->
+	<!--  ===================== -->
+	<!-- 
+		Security exception translation filter, as described in section 7.4.4, page 292.
+	-->
+	<bean id="exceptionTranslationFilter"
+		class="org.acegisecurity.ui.ExceptionTranslationFilter">
+		<property name="authenticationEntryPoint"
+			ref="authenticationEntryPoint" />
+		<property name="accessDeniedHandler">
+			<bean
+				class="org.acegisecurity.ui.AccessDeniedHandlerImpl">
+				<property name="errorPage" value="/error.htm" />
+			</bean>
+		</property>
+	</bean>
+
+	<!--  =========== -->
+	<!--  INTEGRATION -->
+	<!--  =========== -->
+	<!-- 
+		HttpSessionContetIntegrationFilter, as originally described in section
+		7.4.2, on page 286.
+	-->
+	<bean id="httpSessionIntegrationFilter"
+		class="org.acegisecurity.context.HttpSessionContextIntegrationFilter">
+		<property name="forceEagerSessionCreation" value="false" />
+	</bean>
+
+	<!--  =========================== -->
+	<!--  FILTER SECURITY INTERCEPTOR -->
+	<!--  =========================== -->
+	<!-- 
+		FilterSecurityInterceptor, as shown in section 7.4.5.
+	-->
+	<bean id="filterSecurityInterceptor"
+      class="org.acegisecurity.intercept.web.FilterSecurityInterceptor">
+    <property name="authenticationManager" ref="authenticationManager" />
+    <property name="accessDecisionManager" ref="accessDecisionManager" />
+    <property name="objectDefinitionSource">
+      <value><!--
+        CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+        PATTERN_TYPE_APACHE_ANT
+        /editpayment.htm=ROLE_VOLUNTEER
+        /editpledge.htm=ROLE_VOLUNTEER
+        /adduser.htm=ROLE_VOLUNTEER
+        /searchpaymentdetail.htm=ROLE_VOLUNTEER
+        /searchpledges.htm=ROLE_VOLUNTEER
+        /searchusers.htm=ROLE_VOLUNTEER
+    
+      -->
+       /editpayment.htm=ROLE_MEMBER
+        /editpledge.htm=ROLE_MEMBER
+        /adduser.htm=ROLE_MEMBER
+        /searchpaymentdetail.htm=ROLE_MEMBER
+        /searchpledges.htm=ROLE_MEMBER
+        /searchusers.htm=ROLE_MEMBER
+        /searchFamilyMembers.htm=ROLE_MEMBER
+        /templerevenue.htm=ROLE_TRUSTEE
+      </value>
+    </property>
+  </bean>
+
+	<!--  =========== -->
+	<!--  REMEMBER ME -->
+	<!--  =========== -->
+	<bean id="rememberMeProcessingFilter"
+		class="org.acegisecurity.ui.rememberme.RememberMeProcessingFilter">
+		<property name="rememberMeServices" ref="rememberMeServices" />
+		<property name="authenticationManager"
+			ref="authenticationManager" />
+	</bean>
+
+	<bean id="rememberMeServices"
+		class="org.acegisecurity.ui.rememberme.TokenBasedRememberMeServices">
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="key" value="starpath" />
+	</bean>
+
+	<bean id="rememberMeAuthenticationProvider"
+		class="org.acegisecurity.providers.rememberme.RememberMeAuthenticationProvider">
+		<property name="key" value="starpath" />
+	</bean>
+
+	<!--  ====== -->
+	<!--  LOGOUT -->
+	<!--  ====== -->
+	<bean id="logoutFilter"
+		class="org.acegisecurity.ui.logout.LogoutFilter">
+		<constructor-arg index="0" value="/login.htm" />
+		<constructor-arg index="1">
+			<list>
+				<ref bean="rememberMeServices" />
+				<bean
+					class="org.acegisecurity.ui.logout.SecurityContextLogoutHandler" >
+					<property name="invalidateHttpSession" value="true"></property>
+					</bean>
+			</list>
+		</constructor-arg>
+		<property name="filterProcessesUrl" value="/j_acegi_logout"></property>
+	</bean>
+
+	<!--  ============== -->
+	<!--  HTTP/S CHANNEL -->
+	<!--  ============== -->
+	<!-- 
+		This can't be enabled unless tomcat has an established secure keystore
+		and the port 8443 enabled
+	-->
+	<bean id="channelProcessingFilter"
+		class="org.acegisecurity.securechannel.ChannelProcessingFilter">
+		<property name="channelDecisionManager"
+			ref="channelDecisionManager" />
+		<property name="filterInvocationDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/login.htm=REQUIRES_SECURE_CHANNEL
+				/j_acegi_security_check*=REQUIRES_SECURE_CHANNEL
+				/**=REQUIRES_INSECURE_CHANNEL
+			</value>
+		</property>
+	</bean>
+	
+	<bean id="channelDecisionManager"
+		class="org.acegisecurity.securechannel.ChannelDecisionManagerImpl">
+		<property name="channelProcessors">
+			<list>
+				<bean
+					class="org.acegisecurity.securechannel.SecureChannelProcessor" />
+				<bean
+					class="org.acegisecurity.securechannel.InsecureChannelProcessor" />
+			</list>
+		</property>
+	</bean>
+
+
+	<!--  =========== -->
+	<!--  CONCURRENCY -->
+	<!--  =========== -->
+	<bean id="concurrentSessionFilter"
+		class="org.acegisecurity.concurrent.ConcurrentSessionFilter">
+		<property name="sessionRegistry" ref="sessionRegistry" />
+		<property name="expiredUrl" value="/home.htm" />
+	</bean>
+	
+	<bean id="sessionRegistry"
+		class="org.acegisecurity.concurrent.SessionRegistryImpl" />
+
+</beans>
+

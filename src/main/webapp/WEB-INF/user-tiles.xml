@@ -1,0 +1,124 @@
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+ "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name=".header" page="/WEB-INF/jsp/header.jsp" />
+
+	<definition name="template"
+		page="/WEB-INF/jsp/starpathTemplate.jsp">
+		<put name="title" value="StarpathIT" />
+		<put name="header" value=".header" />
+		<put name="content" value="/WEB-INF/jsp/defaultContentPage.jsp" />
+		<put name="footer" value="/WEB-INF/jsp/footer.jsp" />
+		<put name="leftpane" value="/WEB-INF/jsp/leftpane.jsp" />
+	</definition>	
+	<definition name="searchResults" extends="template">
+		<put name="title" value="User Search Results" />
+		<put name="content" value="/WEB-INF/jsp/searchResults.jsp" />
+	</definition>
+	<definition name="addUser" extends="template">
+		<put name="title" value="Add User" />
+		<put name="content" value="/WEB-INF/jsp/addUser.jsp" />
+	</definition>
+	<definition name="editUser" extends="template">
+		<put name="title" value="Add User" />
+		<put name="content" value="/WEB-INF/jsp/editUser.jsp" />
+	</definition>
+	<definition name="searchUsers" extends="template">
+		<put name="title" value="Search Users" />
+		<put name="content" value="/WEB-INF/jsp/searchUsers.jsp" />
+	</definition>
+	<definition name="searchPledges" extends="template">
+		<put name="title" value="Search Pledges" />
+		<put name="content" value="/WEB-INF/jsp/searchPledges.jsp" />
+	</definition>	
+	<definition name="login" extends="template">
+		<put name="title" value="Users" />
+		<put name="content" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	<definition name="error" extends="template">
+		<put name="title" value="Authorization error" />
+		<put name="content" value="/WEB-INF/jsp/error.jsp" />
+	</definition>		
+	<definition name="home" extends="template">
+		<put name="title" value="Fund Raiser Home" />
+		<put name="content" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+	<definition name="templeRevenue" extends="template">
+		<put name="title" value="Fund Raiser Home" />
+		<put name="content" value="/WEB-INF/jsp/templeRevenue.jsp" />
+	</definition>	
+	<!-- new payment registration controller try -->
+	<definition name="paymentPledgeForm" extends="template">
+		<put name="title" value="Add Pledge" />
+		<put name="content" value="/WEB-INF/jsp/paymentPledgeForm.jsp" />
+	</definition>
+	<definition name="paymentUserForm" extends="template">
+		<put name="title" value="Add User" />
+		<put name="content" value="/WEB-INF/jsp/paymentUserForm.jsp" />
+	</definition>
+	<definition name="paymentConfirmation" extends="template">
+		<put name="title" value="User Confirmation" />
+		<put name="content"
+			value="/WEB-INF/jsp/paymentConfirmationForm.jsp" />
+	</definition>
+	<definition name="paymentPledgeFormForUser" extends="template">
+		<put name="title" value="Add Pledge" />
+		<put name="content" value="/WEB-INF/jsp/paymentPledgeFormForUser.jsp" />
+	</definition>	
+	<definition name="paymentConfirmationForUser" extends="template">
+		<put name="title" value="User Confirmation" />
+		<put name="content"
+			value="/WEB-INF/jsp/paymentConfirmationFormForUser.jsp" />
+	</definition>
+	<definition name="searchPaymentDetail" extends="template">
+		<put name="title" value="Search Payment Details" />
+		<put name="content"
+			value="/WEB-INF/jsp/searchPaymentDetail.jsp" />
+	</definition>
+	<definition name="editPayment" extends="template">
+		<put name="title" value="Edit/Add Payment" />
+		<put name="content" value="/WEB-INF/jsp/editPayment.jsp" />
+	</definition>
+	<definition name="userDetail" extends="template">
+		<put name="title" value="User Details" />
+		<put name="content" value="/WEB-INF/jsp/userDetail.jsp" />
+	</definition>
+	<definition name="registerUserForm" extends="template">
+		<put name="title" value="Register User" />
+		<put name="content" value="/WEB-INF/jsp/registerUserForm.jsp" />
+	</definition>
+	<definition name="registerUserFamilyMemberForm" extends="template">
+		<put name="title" value="Register Family" />
+		<put name="content" value="/WEB-INF/jsp/registerUserFamilyMemberForm.jsp" />
+	</definition>
+	<definition name="familyMemberConfirmation" extends="template">
+		<put name="title" value="User Registration Confirmation" />
+		<put name="content" value="/WEB-INF/jsp/familyMemberConfirmation.jsp" />
+	</definition>
+		<definition name="searchFamilyMembers" extends="template">
+		<put name="title" value="Search Family Members" />
+		<put name="content" value="/WEB-INF/jsp/searchFamilyMembers.jsp" />
+	</definition>
+	<definition name="editUserFamilyMember" extends="template">
+		<put name="title" value="Edit Family Member" />
+		<put name="content" value="/WEB-INF/jsp/editUserFamilyMember.jsp" />
+	</definition>
+	<definition name="forgotPasswordForm" extends="template">
+		<put name="title" value="Forgot Password" />
+		<put name="content" value="/WEB-INF/jsp/forgotPassword.jsp" />
+	</definition>
+	<definition name="forgotPasswordSuccess" extends="template">
+		<put name="title" value="Forgot Password Success" />
+		<put name="content" value="/WEB-INF/jsp/forgotPasswordSuccess.jsp" />
+	</definition>
+	<definition name="userExists" extends="template">
+		<put name="title" value="User Already Exists" />
+		<put name="content" value="/WEB-INF/jsp/userExists.jsp" />
+	</definition>
+	<definition name="emailError" extends="template">
+		<put name="title" value="Invalid Email" />
+		<put name="content" value="/WEB-INF/jsp/emailError.jsp" />
+	</definition>
+</tiles-definitions>
