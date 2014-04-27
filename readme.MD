@@ -7,3 +7,8 @@ Steps After Checkout Project from GIT
 Steps to Build and Deploy
 1)Uncomment the line with "<property name="hibernate.hbm2ddl.auto" value="create" />"
    in the src/main/resources/META-INF/persistance.xml
+2) create a database donation in mysql
+3) change db url/user/password settings in src/main/resources/db.properties and in src/main/webapp/WEB-INF/jetty-env.xml
+4) run "mvn package jetty:run"
+5 register a user "test@test.com"
+6) should see all features related to pledges and payments
