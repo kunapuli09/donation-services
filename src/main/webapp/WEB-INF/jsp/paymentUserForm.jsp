@@ -24,21 +24,14 @@
 	onsubmit="return checkEmail()" commandName="paymentDetail">
 	<input type="hidden" name="page" value="0" />
 	<br>
-	<div class="sh"   >
+	<div    >
 	<table height="25px;" width="100%">
-			<tr colspan="4">
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+			<tr>
+				<td>
 					<strong>User Information</strong>
 				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Pledge
-				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Confirmation
-				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
-			</tr>
-		</table>
+		    </tr>
+   </table>
 	</div>
 	<table cellpadding="0" cellspacing="0" align="center">
 
@@ -46,7 +39,7 @@
 			<td colspan="4" class="rs"></td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Phone Number :*
 			</td>
 			<td>
@@ -57,7 +50,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Email :*
 			</td>
 			<td>
@@ -66,7 +59,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Password :*
 			</td>
 			<td>
@@ -76,7 +69,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Confirm Password :*
 			</td>
 			<td>
@@ -87,7 +80,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				First Name :*
 			</td>
 			<td>
@@ -97,7 +90,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Last Name :*
 			</td>
 			<td>
@@ -107,7 +100,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				Address :
 			</td>
 			<td>
@@ -116,7 +109,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				City :
 			</td>
 			<td>
@@ -125,7 +118,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td >
 				State :
 			</td>
 			<td>
@@ -135,7 +128,7 @@
 		</tr>	
 		
 		<tr>
-			<td class="sh_1">
+			<td >
 				Zipcode :
 			</td>
 			<td>
@@ -144,7 +137,7 @@
 			</td>
 		</tr>
 		<%--<tr>
-			<td class="sh_1">
+			<td >
 				Website :
 			</td>
 			<td>

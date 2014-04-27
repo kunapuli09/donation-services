@@ -13,8 +13,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://displaytag.sf.net/el" prefix="display"%>
 <%@ taglib prefix="authz" uri="http://acegisecurity.org/authz" %>
-<link href="css/main.css" rel="stylesheet" type="text/css">
-
+<!--<link href="css/css-content.css" rel="stylesheet" type="text/css">-->
 <table align="center">
 <tr class="sh_1" align="center">
 <td><b>

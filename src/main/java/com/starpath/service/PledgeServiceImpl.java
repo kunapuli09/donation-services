@@ -41,7 +41,7 @@ import com.starpath.domain.UserPrivilegeType;
  * @since Hibernate 3.2.1 / Spring 2.0.6 / Maven 2.0.4
  * @author Krishna M. Kunapuli
  *         <p>
- *         Copyright ©2007-2008 by StarpathIT Inc., all rights reserved. <br>
+ *         Copyright ï¿½2007-2008 by StarpathIT Inc., all rights reserved. <br>
  */
 
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -64,7 +64,7 @@ public class PledgeServiceImpl implements PledgeService,
 		}
 		if (user.getRoles() != null && user.getRoles().size() == 0) {
 			// this is a super user for the system
-			if (user.getEmail().equals("trustee@svtc.com")) {
+			if (user.getEmail().equals("test@test.com")) {
 				UserPrivilege role = new UserPrivilege();
 				role.setPrivilege(UserPrivilegeType.ROLE_MEMBER.name());
 				UserPrivilege role2 = new UserPrivilege();
@@ -159,8 +159,9 @@ public class PledgeServiceImpl implements PledgeService,
 		text = StringUtils.replace(text, "%USER%", pledge.getUser()
 				.getLastName());
 		message.setText(text);
-
-		mailSender.send(message);
+        //TODO send an email
+        System.out.println("sent an email" + message);
+		//mailSender.send(message);
 	}
 
 	/**
@@ -492,7 +493,9 @@ public class PledgeServiceImpl implements PledgeService,
 			text = StringUtils.replace(text, "%USER%", user.getLastName());
 			text = StringUtils.replace(text, "%PASSWORD%", user.getPassword());
 			message.setText(text);
-			mailSender.send(message);
+			//mailSender.send(message);
+            //TODO send an email
+            System.out.println("sent an email" + message);
 		} else {
 			throw new BusinessLogicException("User is not registered");
 		}
@@ -507,7 +510,9 @@ public class PledgeServiceImpl implements PledgeService,
 		text = StringUtils.replace(text, "%EMAIL%", user.getEmail());
 		text = StringUtils.replace(text, "%PASSWORD%", user.getPassword());
 		message.setText(text);
-		mailSender.send(message);
+		//mailSender.send(message);
+        //TODO send an email
+        System.out.println("sent an email" + message);
 
 	}
 

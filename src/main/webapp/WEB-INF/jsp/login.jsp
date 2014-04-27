@@ -17,9 +17,8 @@
 </head>
 <body>
 <table border ="0" width="100%">
-	<tr bgcolor="#980000">
-		<td background="images/hashbar.png" style="padding-top: 5px;"
-			valign="top"><strong>Donation</strong></td>
+	<tr>
+		<td valign="top"><strong>Donation</strong></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
@@ -48,9 +47,8 @@
 <br/>
 <br/>
 <table border="0" align="center" width="100%">
-	<tr bgcolor="#980000">
-		<td background="images/hashbar.png" style="padding-top: 5px;"
-			valign="top"><strong>New User</strong></td>
+	<tr>
+		<td valign="top"><strong>New User</strong></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
@@ -66,9 +64,8 @@
 <br/>
 <br/>
 <table border="0" align="center" width="100%">	
-	<tr bgcolor="#980000">
-		<td background="images/hashbar.png" style="padding-top: 5px;"
-			valign="top"><strong>Existing User</strong></td>
+	<tr>
+		<td valign="top"><strong>Existing User</strong></td>
 	</tr>
 	<tr>
 		<td><c:if test="${not empty param.login_error}">

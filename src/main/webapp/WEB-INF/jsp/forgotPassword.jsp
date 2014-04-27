@@ -22,17 +22,18 @@
 
 <div>
 		<tr>
-			<td colspan="4" class="rs">Please Enter the following information and Click on Get Password button. Your Password will be sent to you by email at your registered email.</td>
+			<td>Please Enter the following information and Click on Get Password button. 
+				Your Password will be sent to you by email at your registered email.</td>
 		</tr>
 	</div>
 
 
-	<table cellpadding="0" cellspacing="0" align="left">
+	<table>
 			<tr>
 			<td colspan="4" class="rs">
 		</tr>
 		<tr>
-			<td class="sh_1">
+			<td>
 				Phone Number :
 			</td>
 			<td>
@@ -41,7 +42,7 @@
 			</td>
 		</tr>	
 		<tr>
-			<td class="sh_1">
+			<td >
 				Email :*
 			</td>
 			<td>
@@ -49,17 +50,7 @@
 				
 			</td>
 		</tr>
-		<tr>
-			<td colspan="4" class="rs">
-		</tr>
-
-		<tr>
-			<td colspan="4" class="rs">
-		</tr>
-
-		<tr>
-			<td colspan="4" class="rs">
-		</tr>
+		
 		<tr colspan="2" align="right">
 			<td>
 				<input type="submit" name="getPassword" value="Get Password">

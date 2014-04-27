@@ -23,13 +23,9 @@
   
   <body>
     <tr colspan="3">				
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Pledge
-				</td>
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+				<td >
 					Confirmation
 				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
 	</tr>
     <form:form commandName="paymentDetail" method="POST" action="addPledge.htm">
       <input type="hidden" name="page" value="1" />

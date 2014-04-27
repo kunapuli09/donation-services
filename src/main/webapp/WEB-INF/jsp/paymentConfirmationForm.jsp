@@ -22,17 +22,10 @@
   </head>
   
   <body>
-    <tr colspan="4">
-				<td style="align: left; background: #ffff99; text-align: center;">
-					<strong>User Information</strong>
-				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Pledge
-				</td>
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+    <tr>
+				<td>
 					Confirmation
 				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
 			</tr>
     <form:form commandName="paymentDetail" method="POST" action="registerUser.htm">
       <input type="hidden" name="page" value="2" />

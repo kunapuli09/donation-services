@@ -35,13 +35,9 @@
 			<div class="sh">
 				<table height="25px;" width="100%">
 			<tr colspan="4">
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+				<td>
 					Pledge
 				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Confirmation
-				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
 			</tr>
 		</table>
 			</div>

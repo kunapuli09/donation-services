@@ -14,16 +14,9 @@
   <body>
     <table height="25px;" width="100%">
 			<tr colspan="4">
-				<td style="align: left; background: #ffff99; text-align: center;">
-					User Information
-				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Family Member Information
-				</td>
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+				<td >
 					<strong>Confirmation</strong>
 				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
 			</tr>
 		</table>
     <form:form commandName="user" method="POST" action="registerUserMembers.htm">
@@ -52,7 +45,7 @@
 </c:if>      	
 	 </c:forEach>    	
   </table>
-      <p>Your information will be securely stored in database and is accessable to Board Of Trustees of this non profit Only. Please Click "Finish" to confirm your details.</p>
+      <p>Your information will be securely stored in temple database and is accessable to Temple Board Of Trustees Only. Please Click "Finish" to confirm your details.</p>
       <input type="submit" name="_target1" value="Back">&nbsp;<input type="submit" name="_finish" value="Finish">
     </form:form>
   </body>

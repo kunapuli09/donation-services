@@ -21,7 +21,7 @@ import com.starpath.domain.UserPrivilege;
  * @since Hibernate 3.2.1 / Spring 2.0.6 / Maven 2.0.4
  * @author Krishna M. Kunapuli
  * <p>
- *   Copyright ©2007-2008 by StarpathIT Inc., all rights reserved.
+ *   Copyright ï¿½2007-2008 by StarpathIT Inc., all rights reserved.
  * <br>
  */
 
@@ -153,11 +153,11 @@ public class PledgeServiceTest extends
 		 String pwd = encoder.encodePassword("pwd", salt);
 		 */user.setConfirmPassword("trustee");
 		user.setCredentialsExpired(false);
-		user.setEmail("trustee@svtc.com");
+		user.setEmail("test1@test1.com");
 		user.setEnabled(true);
-		user.setFirstName("Murali");
-		user.setLastName("Ankavur");
-		user.setPassword("trustee");
+		user.setFirstName("test1");
+		user.setLastName("test1");
+		user.setPassword("test1");
 		user.setPasswordHint("don't know");
 		user.setPhoneNumber("33333");
 		/*Pledge pledge = new Pledge();
@@ -232,10 +232,10 @@ public class PledgeServiceTest extends
 		 String pwd = encoder.encodePassword("pwd", salt);
 		 */user.setConfirmPassword("trustee");
 		user.setCredentialsExpired(false);
-		user.setEmail("trustee6@svtc.com");
+		user.setEmail("test@test.com");
 		user.setEnabled(true);
-		user.setFirstName("Murali");
-		user.setLastName("Ankavur");
+		user.setFirstName("test");
+		user.setLastName("test");
 		user.setPassword("trustee");
 		user.setPasswordHint("don't know");
 		user.setPhoneNumber("33333");

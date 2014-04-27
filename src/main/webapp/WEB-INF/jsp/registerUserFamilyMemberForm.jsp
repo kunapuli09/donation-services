@@ -7,7 +7,7 @@
 <%@ taglib prefix="rr" tagdir="/WEB-INF/tags"%>
 <%@ taglib uri="http://displaytag.sf.net/el" prefix="display"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link href="css/css-content.css" rel="stylesheet" type="text/css">
+<!--<link href="css/css-content.css" rel="stylesheet" type="text/css">-->
 <html>
 	<head>
 		<title>Add Family Members</title>
@@ -22,16 +22,10 @@
 			<div class="sh">
 				<table height="25px;" width="100%">
 			<tr colspan="4">
-				<td style="align: left; background: #ffff99; text-align: center;">
-					User Information
-				</td>
-				<td style="align: left; background: #F4BF3E; text-align: center;">
+				<td >
 					<strong>Family Member Information</strong>
 				</td>
-				<td style="align: left; background: #ffff99; text-align: center;">
-					Confirmation
-				</td>
-				<td style="align: left; background: #ffffff; text-align: center;"></td>
+				
 			</tr>
 		</table>
 			</div>
