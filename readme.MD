@@ -1,14 +1,19 @@
-Steps After Checkout Project from GIT
+Non-Profits Manage Member, Pledge and Payment information. A showcase for Martin Fowler's Smart Domain Model Principles.
+
+Tech Stack:
+Maven2.x/3.x, Spring MVC2.x, Hibernate JPA, MySQL5.x, Tomcat/Jetty
+
+
 *You need to have maven installed and set in your windows PATH to do these steps
 
-1)Goto project properties in eclipse and edit M2_REPO eclipse variable to set your maven repository
-  Maven  repository by default is in c:\Documents Settings\<windowsUser Name>\.m2\repository
+Git clone and follow these steps to Build and Deploy
 
-Steps to Build and Deploy
-1)Uncomment the line with "<property name="hibernate.hbm2ddl.auto" value="create" />"
+1) Uncomment the line with "<property name="hibernate.hbm2ddl.auto" value="create" />"
    in the src/main/resources/META-INF/persistance.xml
 2) create a database donation in mysql
 3) change db url/user/password settings in src/main/resources/db.properties and in src/main/webapp/WEB-INF/jetty-env.xml
 4) run "mvn package jetty:run"
 5 register a user "test@test.com"
 6) should see all features related to pledges and payments
+
+Please contribute more to help non-profits manage their donations
