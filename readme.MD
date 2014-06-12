@@ -1,3 +1,8 @@
+donation-services
+=================
+
+SaaS for Donation Management. Show cases Domain Drive Development Web Application
+
 Non-Profits Manage Member, Pledge and Payment information. A showcase for Martin Fowler's Smart Domain Model Principles.
 
 Tech Stack:
